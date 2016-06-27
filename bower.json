@@ -1,5 +1,5 @@
 {
-  "name": "ngDate",
+  "name": "ngdate",
   "version": "1.0.0",
   "keywords": ["formatter", "date"],
   "main": ["dist/ngDate.js"],
