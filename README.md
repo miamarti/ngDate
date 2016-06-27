@@ -19,3 +19,8 @@ AngularJS component responsible for formatting date fields.
 ```
 $ bower install ngDate --save
 ```
+
+## Module AngularJS include
+```
+angular.module('example', ["ngDate"]);
+```
