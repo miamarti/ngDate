@@ -12,6 +12,7 @@
                 var formatValue = attrs.format ? attrs.format : 'MM/DD/YYYY';
                 elem.bind('change', function () {
                     var format = moment(elem[0].value, 'MMDDYYYY').format(formatValue);
+                    format = format.replace('%d', 'DD').replace('%m', 'MM').replace('%Y', 'YYYY');
                     elem[0].value = format !== 'Invalid date' ? format : '';
                 });
                 elem.bind('keyup', function () {
