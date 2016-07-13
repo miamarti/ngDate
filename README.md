@@ -15,6 +15,12 @@ AngularJS component responsible for formatting date fields.
 <input type="text" placeholder="__/__/____" ng-date>
 ```
 
+## Config
+| Tag | Info |
+|:----|:-----|
+|no-time="trur"| Remove time |
+|format="%d/%m/%Y"| Informs the correct formatting |
+
 ## Bower install de dependency
 ```
 $ bower install ngDate --save
