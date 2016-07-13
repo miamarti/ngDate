@@ -9,8 +9,9 @@
                 isBefore: '=isBefore'
             },
             link: function (scope, elem, attrs, ctrl) {
+                var formatValue = attrs.format ? attrs.format : 'MM/DD/YYYY';
                 elem.bind('change', function () {
-                    var format = moment(elem[0].value, 'MMDDYYYY').format('MM/DD/YYYY');
+                    var format = moment(elem[0].value, 'MMDDYYYY').format(formatValue);
                     elem[0].value = format !== 'Invalid date' ? format : '';
                 });
                 elem.bind('keyup', function () {
@@ -21,7 +22,7 @@
                 ctrl.$formatters.push(function (value) {
                     var date = '';
                     if (value) {
-                        date = moment(new Date(value)).format('MM/DD/YYYY');
+                        date = moment(new Date(value)).format(formatValue);
                     }
                     return date;
                 });
@@ -30,7 +31,11 @@
                         if (value.replace(/\//g, '').length > 8) {
                             value = value.substring(0, value.length - 1);
                         }
-                        return (new Date(moment(elem[0].value, 'MMDDYYYY'))).toISOString();
+                        if(attrs.noTime && attrs.noTime === 'true'){
+                            return (new Date(moment(elem[0].value, 'MMDDYYYY').clone().hour(0).minute(0).second(0).millisecond(0))).toISOString();
+                        } else {
+                            return (new Date(moment(elem[0].value, 'MMDDYYYY'))).toISOString();
+                        }
                     } else {
                         return '';
                     }
@@ -46,7 +51,11 @@
                     }
                     if (value) {
                         setTimeout(function () {
-                            scope.ngModel = (new Date(value.toString())).toISOString();
+                            if(attrs.noTime && attrs.noTime === 'true'){
+                                scope.ngModel = (moment(new Date(value.toString())).clone().hour(0).minute(0).second(0).millisecond(0)).toISOString();
+                            } else {
+                                scope.ngModel = (new Date(value.toString())).toISOString();
+                            }
                         }, 10);
                     }
                 });
