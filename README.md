@@ -1,4 +1,4 @@
-# ngDate
+# Fields Date formatting
 Fields formatting mask in angularJs
 
 <p>
