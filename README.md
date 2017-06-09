@@ -16,9 +16,10 @@ AngularJS component responsible for formatting date fields.
 ```
 
 ## Config
-| Tag | Info |
-|:----|:-----|
-|no-time="true"| Remove time |
+
+| Tag             | Info                           |
+|:----------------|:-------------------------------|
+|no-time="true"   | Remove time                    |
 |format="%d/%m/%Y"| Informs the correct formatting |
 
 ## Bower install de dependency
