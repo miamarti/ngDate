@@ -1,0 +1,23 @@
+{
+  "name": "ng-date",
+  "description": "AngularJS component responsible for formatting date fields.",
+  "author": "Miller Augusto S. Martins <miller.augusto@gmail.com>",
+  "version": "1.2.2",
+  "keywords": [
+    "formatter",
+    "date",
+    "js",
+    "front-end",
+    "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miamarti/ngDate"
+  },
+  "main": "dist/ngDate.js",
+  "dependencies": {
+    "moment": "^2.12.0"
+  },
+  "license": "MIT",
+  "homepage": "https://miamarti.github.io/ngDate/"
+}
